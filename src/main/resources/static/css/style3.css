@@ -1,0 +1,209 @@
+/* Stili generali per il body */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 20px;
+}
+
+.color_stampa {
+  background: linear-gradient(-45deg, #CCFFE5, #CCFFFF, #CCE5FF, #CCCCFF);
+  background-size: 400% 400%;
+  animation: gradient 7s ease infinite;
+  height: 100vh;
+}
+
+/* Stili per il titolo e pulsanti */
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+/* Stili per la tabella nell'Agenda Autobiografica */
+.tale_back{
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+select {
+  width: 100%;
+  padding: 5px;
+}
+
+/* Stili per il gioco di Memory */
+.memory-game {
+  display: grid;
+  grid-template-columns: repeat(5, 100px);
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.memory-card {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  cursor: pointer;
+  perspective: 1000px;
+}
+
+.memory-card .front, .memory-card .back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  transition: transform 0.5s;
+}
+
+.memory-card .front {
+  transform: rotateY(180deg);
+}
+
+.memory-card.flipped .front {
+  transform: rotateY(0deg);
+}
+
+.memory-card.flipped .back {
+  transform: rotateY(180deg);
+}
+
+.memory-card .back {
+  background-color: #333;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  transform: rotateY(0deg);
+}
+
+.memory-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.input-container {
+  margin-top: 20px;
+}
+
+.input-container input {
+  margin-bottom: 10px;
+}
+
+.start-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.congratulations {
+  margin-top: 20px;
+  font-size: 24px;
+  color: green;
+  display: none;
+}
+/* Impostazioni generali */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* Stile per il titolo principale */
+.titolo {
+  background-color: #4CAF50;
+  color: #fff;
+  border-radius: 0 0 10px 10px;
+  padding: 20px;
+  text-align: center;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 2em;
+}
+
+/* Stile per il contenitore principale */
+.site_back {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+/* Stile per il testo */
+p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+/* Stile per le immagini */
+img {
+  display: block;
+  margin: 0 auto 20px auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Stile per i pulsanti */
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+/* Stile per il pulsante quando il mouse passa sopra */
+button:hover {
+  background-color: #45a049;
+}
+
+/* Stile per la classe body se esiste 'color_stampa' */
+.color_stampa {
+  background-color: #f4f4f4;
+}

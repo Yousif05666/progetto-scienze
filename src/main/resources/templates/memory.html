@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gioco Memory</title>
+  <link rel="stylesheet" href="css/style3.css" type="text/css">
+
+</head>
+<body class="color_stampa">
+
+<h1 class="titolo">Gioco Memory</h1>
+<button id="return_home" type="button" onclick="location.href='/'">Home</button>
+<button id="agenda" type="button" onclick="location.href='/Agenda_Autobiografica'">Agenda Autobiografica</button>
+<button id="memory" type="button" onclick="location.href='/crossword'">Cruciverba</button>
+<button id="agenda" type="button" onclick="location.href='/game'">Parole Associate</button>
+<div class="site_back">
+ <p>
+   Traccia: Il gioco del Memory consiste nel trovare tutte le coppie di carte con immagini uguali tra un set di 10 coppie di immagini diverse.
+   Le carte sono inizialmente coperte e disposte su una griglia. Il giocatore deve girare due carte alla volta per cercare di trovare una coppia corrispondente.
+   Quando viene trovata una coppia di immagini uguali, entrambe le carte rimangono scoperte. Se le due carte non corrispondono, vengono rimesse a faccia in giù.
+   Il gioco continua fino a quando tutte le coppie di immagini sono state trovate e scoperte.
+ </p>
+<p>Inserisci 10 immagini per giocare</p>
+
+<div class="input-container">
+  <input type="file" id="image1" accept="image/*">
+  <input type="file" id="image2" accept="image/*">
+  <input type="file" id="image3" accept="image/*">
+  <input type="file" id="image4" accept="image/*">
+  <input type="file" id="image5" accept="image/*">
+  <input type="file" id="image6" accept="image/*">
+  <input type="file" id="image7" accept="image/*">
+  <input type="file" id="image8" accept="image/*">
+  <input type="file" id="image9" accept="image/*">
+  <input type="file" id="image10" accept="image/*">
+</div>
+
+<button id="upload-btn" class="start-button" onclick="startGame()">Inizia Gioco</button>
+
+<div class="memory-game" id="memory-game"></div>
+
+<div class="congratulations" id="congratulations">Congratulazioni! Hai concluso il memory con successo!</div>
+</div>
+<script>
+  let memoryImages = [];
+  let matchedPairs = 0;
+
+  function startGame() {
+    const files = [
+      document.getElementById('image1').files[0],
+      document.getElementById('image2').files[0],
+      document.getElementById('image3').files[0],
+      document.getElementById('image4').files[0],
+      document.getElementById('image5').files[0],
+      document.getElementById('image6').files[0],
+      document.getElementById('image7').files[0],
+      document.getElementById('image8').files[0],
+      document.getElementById('image9').files[0],
+      document.getElementById('image10').files[0],
+    ];
+
+    if (files.some(file => !file)) {
+      alert('Per favore, inserisci 10 immagini.');
+      return;
+    }
+
+    const readerPromises = files.map(file => {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = function (event) {
+          resolve(event.target.result);
+        };
+        reader.onerror = function (event) {
+          reject(event);
+        };
+        reader.readAsDataURL(file);
+      });
+    });
+
+    Promise.all(readerPromises).then(images => {
+      memoryImages = images.concat(images).sort(() => 0.5 - Math.random());
+      matchedPairs = 0;
+      document.getElementById('congratulations').style.display = 'none';
+      createMemoryCards();
+    });
+  }
+
+  function createMemoryCards() {
+    const gameContainer = document.getElementById('memory-game');
+    gameContainer.innerHTML = '';
+    memoryImages.forEach((image, index) => {
+      const card = document.createElement('div');
+      card.classList.add('memory-card');
+      card.dataset.index = index;
+      card.innerHTML = `
+                <div class="front">
+                    <img src="${image}" alt="Memory Image">
+                </div>
+                <div class="back">?</div>
+            `;
+      card.addEventListener('click', flipCard);
+      gameContainer.appendChild(card);
+    });
+  }
+
+  let hasFlippedCard = false;
+  let firstCard, secondCard;
+  let lockBoard = false;
+
+  function flipCard() {
+    if (lockBoard) return;
+    if (this === firstCard) return;
+
+    this.classList.add('flipped');
+
+    if (!hasFlippedCard) {
+      hasFlippedCard = true;
+      firstCard = this;
+      return;
+    }
+
+    secondCard = this;
+    checkForMatch();
+  }
+
+  function checkForMatch() {
+    let isMatch = memoryImages[firstCard.dataset.index] === memoryImages[secondCard.dataset.index];
+
+    isMatch ? disableCards() : unflipCards();
+  }
+
+  function disableCards() {
+    firstCard.removeEventListener('click', flipCard);
+    secondCard.removeEventListener('click', flipCard);
+    matchedPairs++;
+    resetBoard();
+
+    if (matchedPairs === 10) {
+      document.getElementById('congratulations').style.display = 'block';
+    }
+  }
+
+  function unflipCards() {
+    lockBoard = true;
+    setTimeout(() => {
+      firstCard.classList.remove('flipped');
+      secondCard.classList.remove('flipped');
+      resetBoard();
+    }, 1000);
+  }
+
+  function resetBoard() {
+    [hasFlippedCard, lockBoard] = [false, false];
+    [firstCard, secondCard] = [null, null];
+  }
+</script>
+
+</body>
+</html>

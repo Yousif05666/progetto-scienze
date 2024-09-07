@@ -1,0 +1,365 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Agenda Autobiografica</title>
+  <link rel="stylesheet" href="css/style3.css" type="text/css">
+
+</head>
+<body class="color_stampa">
+
+<h1 class="titolo">Agenda Autobiografica</h1>
+<button id="return_home" type="button" onclick="location.href='/'">Home</button>
+<button id="memory" type="button" onclick="location.href='/memory'">Memory</button>
+<button id="memory" type="button" onclick="location.href='/crossword'">Cruciverba</button>
+<button id="agenda" type="button" onclick="location.href='/game'">Parole Associate</button>
+<div class="site_back">
+<h4>Cosa ti ricordi del tuo passato?</h4>
+
+
+<div class="tale_back">
+  <p>
+    Traccia: Il gioco dell'Agenda Autobiografica è progettato per aiutare i giocatori a riflettere sui ricordi del loro passato.
+    Attraverso una serie di domande, il giocatore viene invitato a valutare quanto bene ricorda eventi e dettagli specifici della propria vita.
+    Al termine del gioco, viene calcolato un punteggio basato sulle risposte fornite.
+  </p>
+  <table>
+    <tr>
+      <th>#</th>
+      <th>Domanda</th>
+      <th>Gradualità del Ricordo</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>La perdita di un dentino</td>
+      <td>
+        <select>
+          <option value="3">Ricordo perfettamente</option>
+          <option value="2">Ricordo parzialmente</option>
+          <option value="1">Ricordo vagamente</option>
+          <option value="0">Non ricordo</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Un gioco che faceva con i suoi amici</td>
+      <td>
+        <select>
+          <option value="3">Ricordo perfettamente</option>
+          <option value="2">Ricordo parzialmente</option>
+          <option value="1">Ricordo vagamente</option>
+          <option value="0">Non ricordo</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>I regali di Babbo Natale / Befana, ecc...</td>
+      <td>
+        <select>
+          <option value="3">Ricordo perfettamente</option>
+          <option value="2">Ricordo parzialmente</option>
+          <option value="1">Ricordo vagamente</option>
+          <option value="0">Non ricordo</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>La gelosia per un altro/a bambino/a</td>
+      <td>
+        <select>
+          <option value="3">Ricordo perfettamente</option>
+          <option value="2">Ricordo parzialmente</option>
+          <option value="1">Ricordo vagamente</option>
+          <option value="0">Non ricordo</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Una volta che è caduta/a e si è fatto/a male</td>
+      <td>
+        <select>
+          <option value="3">Ricordo perfettamente</option>
+          <option value="2">Ricordo parzialmente</option>
+          <option value="1">Ricordo vagamente</option>
+          <option value="0">Non ricordo</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Uno/a compagno/a di scuola elementare</td>
+      <td>
+        <select>
+          <option value="3">Ricordo perfettamente</option>
+          <option value="2">Ricordo parzialmente</option>
+          <option value="1">Ricordo vagamente</option>
+          <option value="0">Non ricordo</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>Un compleanno importante festeggiato</td>
+      <td>
+        <select>
+          <option value="3">Ricordo perfettamente</option>
+          <option value="2">Ricordo parzialmente</option>
+          <option value="1">Ricordo vagamente</option>
+          <option value="0">Non ricordo</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>Un primo giorno di scuola</td>
+      <td>
+        <select>
+          <option value="3">Ricordo perfettamente</option>
+          <option value="2">Ricordo parzialmente</option>
+          <option value="1">Ricordo vagamente</option>
+          <option value="0">Non ricordo</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>Una festa di carnevale</td>
+      <td>
+        <select>
+          <option value="3">Ricordo perfettamente</option>
+          <option value="2">Ricordo parzialmente</option>
+          <option value="1">Ricordo vagamente</option>
+          <option value="0">Non ricordo</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>Una vacanza</td>
+      <td>
+        <select>
+          <option value="3">Ricordo perfettamente</option>
+          <option value="2">Ricordo parzialmente</option>
+          <option value="1">Ricordo vagamente</option>
+          <option value="0">Non ricordo</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>Una malattina infettiva contratta</td>
+      <td>
+        <select>
+          <option value="3">Ricordo perfettamente</option>
+          <option value="2">Ricordo parzialmente</option>
+          <option value="1">Ricordo vagamente</option>
+          <option value="0">Non ricordo</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>Una poesia/filastrocca recitata</td>
+      <td>
+        <select>
+          <option value="3">Ricordo perfettamente</option>
+          <option value="2">Ricordo parzialmente</option>
+          <option value="1">Ricordo vagamente</option>
+          <option value="0">Non ricordo</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>Una cerimonia festeggiata</td>
+      <td>
+        <select>
+          <option value="3">Ricordo perfettamente</option>
+          <option value="2">Ricordo parzialmente</option>
+          <option value="1">Ricordo vagamente</option>
+          <option value="0">Non ricordo</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>Una maestra delle elementari</td>
+      <td>
+        <select>
+          <option value="3">Ricordo perfettamente</option>
+          <option value="2">Ricordo parzialmente</option>
+          <option value="1">Ricordo vagamente</option>
+          <option value="0">Non ricordo</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>Quando ha imparato ad andare in bici</td>
+      <td>
+        <select>
+          <option value="3">Ricordo perfettamente</option>
+          <option value="2">Ricordo parzialmente</option>
+          <option value="1">Ricordo vagamente</option>
+          <option value="0">Non ricordo</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>La tua prima auto</td>
+      <td>
+        <select>
+          <option value="3">Ricordo perfettamente</option>
+          <option value="2">Ricordo parzialmente</option>
+          <option value="1">Ricordo vagamente</option>
+          <option value="0">Non ricordo</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>Il nome della tua città natale</td>
+      <td>
+        <select>
+          <option value="3">Ricordo perfettamente</option>
+          <option value="2">Ricordo parzialmente</option>
+          <option value="1">Ricordo vagamente</option>
+          <option value="0">Non ricordo</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>Il suo gioco preferito da bambino</td>
+      <td>
+        <select>
+          <option value="3">Ricordo perfettamente</option>
+          <option value="2">Ricordo parzialmente</option>
+          <option value="1">Ricordo vagamente</option>
+          <option value="0">Non ricordo</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>Primo lavoro</td>
+      <td>
+        <select>
+          <option value="3">Ricordo perfettamente</option>
+          <option value="2">Ricordo parzialmente</option>
+          <option value="1">Ricordo vagamente</option>
+          <option value="0">Non ricordo</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>Il nome del suo primo animale domestico</td>
+      <td>
+        <select>
+          <option value="3">Ricordo perfettamente</option>
+          <option value="2">Ricordo parzialmente</option>
+          <option value="1">Ricordo vagamente</option>
+          <option value="0">Non ricordo</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>Una nota disciplinare presa a scuola</td>
+      <td>
+        <select>
+          <option value="3">Ricordo perfettamente</option>
+          <option value="2">Ricordo parzialmente</option>
+          <option value="1">Ricordo vagamente</option>
+          <option value="0">Non ricordo</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>Il suo primo amore</td>
+      <td>
+        <select>
+          <option value="3">Ricordo perfettamente</option>
+          <option value="2">Ricordo parzialmente</option>
+          <option value="1">Ricordo vagamente</option>
+          <option value="0">Non ricordo</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td>Il suo piatto preferito da bambino</td>
+      <td>
+        <select>
+          <option value="3">Ricordo perfettamente</option>
+          <option value="2">Ricordo parzialmente</option>
+          <option value="1">Ricordo vagamente</option>
+          <option value="0">Non ricordo</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>La sua prima operazione</td>
+      <td>
+        <select>
+          <option value="3">Ricordo perfettamente</option>
+          <option value="2">Ricordo parzialmente</option>
+          <option value="1">Ricordo vagamente</option>
+          <option value="0">Non ricordo</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>Una volta dal dentista</td>
+      <td>
+        <select>
+          <option value="3">Ricordo perfettamente</option>
+          <option value="2">Ricordo parzialmente</option>
+          <option value="1">Ricordo vagamente</option>
+          <option value="0">Non ricordo</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>26</td>
+      <td>Un momento speciale con la famiglia</td>
+      <td>
+        <select>
+          <option value="3">Ricordo perfettamente</option>
+          <option value="2">Ricordo parzialmente</option>
+          <option value="1">Ricordo vagamente</option>
+          <option value="0">Non ricordo</option>
+        </select>
+      </td>
+    </tr>
+  </table>
+</div>
+<div class="result">
+  <button id="upload-btn" onclick="calculateScore()">Calcola Punteggio</button>
+  <p id="score"></p>
+</div>
+</div>
+<script>
+  function calculateScore() {
+    const selects = document.querySelectorAll('select');
+    let totalScore = 0;
+
+    selects.forEach(select => {
+      totalScore += parseInt(select.value);
+    });
+
+    document.getElementById('score').innerText = 'Punteggio totale: ' + totalScore + ' / ' + (selects.length * 3);
+  }
+</script>
+</body>
+</html>

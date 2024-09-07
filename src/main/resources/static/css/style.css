@@ -1,6 +1,9 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 #csv-form {
@@ -22,7 +25,17 @@ body {
   cursor: pointer;
 }
 
-#stampa {
+#memory {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+#agenda {
   background-color: #4CAF50;
   color: #fff;
   padding: 10px 20px;
@@ -47,7 +60,11 @@ body {
 #upload-btn:hover {
   background-color: #3e8e41;
 }
-#stampa:hover {
+#memory:hover {
+  background-color: #3e8e41;
+}
+
+#agenda:hover {
   background-color: #3e8e41;
 }
 
@@ -198,5 +215,21 @@ backdrop-filter: blur(5px);
 -webkit-backdrop-filter: blur(5px);
 border: 1px solid rgba(255, 255, 255, 0.3);
 }
+.titolo {
+  background-color: #4CAF50;
+  color: #fff;
+  border-radius: 0 0 10px 10px;
+  margin: 0;
+  width: 100vw; /* Usa l'intera larghezza della viewport */
+  box-sizing: border-box; /* Per considerare eventuali padding nel calcolo della larghezza */
+  padding: 10px;
+}
 
-
+.site_back{
+  background: rgba(255, 255, 255, 0.2); /* Colore bianco con trasparenza */
+  backdrop-filter: blur(10px); /* Effetto sfocato per creare l'effetto specchio */
+  -webkit-backdrop-filter: blur(10px); /* Supporto per Safari */
+  border-radius: 10px; /* Facoltativo: arrotonda gli angoli */
+  padding: 20px; /* Spazio interno del div */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Bordo semi-trasparente */
+}

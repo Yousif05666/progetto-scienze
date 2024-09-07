@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Gioco di Associazione Parole</title>
+  <link rel="stylesheet" href="/css/style3.css" type="text/css"> <!-- Modifica il percorso se necessario -->
+  <style>
+    .hidden { display: none; }
+    .table-container { display: flex; gap: 20px; justify-content: center; }
+    .table-container table { margin: 0; padding: 0; border-spacing: 0; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid black; padding: 8px; }
+    th { background-color: #f2f2f2; }
+    td { text-align: left; }
+    .input-container { margin-top: 20px; }
+    .input-container input { margin-bottom: 10px; }
+    .site_back { margin-top: 20px; text-align: center; }
+  </style>
+</head>
+<body class="color_stampa">
+
+<h1 class="titolo">Gioco di Associazione Parole</h1>
+
+<!-- Pulsante Home -->
+<button id="return_home" type="button" onclick="location.href='/'">Home</button>
+<button id="memory" type="button" onclick="location.href='/memory'">Memory</button>
+<button id="agenda" type="button" onclick="location.href='/Agenda_Autobiografica'">Agenda Autobiografica</button>
+<button id="memory" type="button" onclick="location.href='/crossword'">Cruciverba</button>
+<!-- Div principale per il gioco -->
+<div class="site_back">
+  <p>
+    Traccia: Il gioco delle associazioni delle parole è progettato per stimolare la memoria e migliorare la capacità di associare concetti tra loro.
+    In questo gioco, il giocatore deve abbinare coppie di parole che si memorizzano.
+  </p>
+  <!-- Messaggio dal controller -->
+  <p th:text="${message}"></p>
+
+  <!-- Contenitore delle tabelle -->
+  <div class="table-container">
+    <!-- Tabella delle Parole 1 -->
+    <table id="table-words1">
+      <thead>
+      <tr>
+        <th>Parola 1</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="pair : ${words}">
+        <td>
+          <span th:text="${pair['word1']}"></span>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <!-- Tabella delle Parole 2 (soluzioni) -->
+    <table id="table-words2" th:class="${showSolutions ? '' : 'hidden'}">
+      <thead>
+      <tr>
+        <th>Parola 2</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="pair : ${words}">
+        <td>
+          <span th:text="${pair['word2']}"></span>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <!-- Tabella delle Caselle di Testo (sempre visibile) -->
+    <table id="table-textfields">
+      <thead>
+      <tr>
+        <th>Inserisci la tua soluzione</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="pair : ${words}">
+        <td>
+          <input type="text" name="solution" placeholder="Scrivi qui la tua risposta">
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Form per il Gioco -->
+  <form action="#" method="post" id="game-form">
+    <button type="submit" formaction="/game/hide-words">Nascondi Parola 2</button>
+    <button type="submit" formaction="/game/show-solutions">Verifica</button>
+    <button type="submit" formaction="/game/change-words">Cambia Parole</button>
+  </form>
+</div>
+
+</body>
+</html>
